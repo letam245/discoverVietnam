@@ -9,19 +9,124 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap cdn -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+
+
     <!-- link to local style sheet-->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 </head>
 
 <body>
-    
+    <div class="containter-fluid">
+        <div class="row">
+            <div id="box">
+                <h4 id="disc">Dis<br>co- <br>ver</h4>
+                <h1 id="vn">Viet<br class="visible-xs hidden-sm">nam</h1>
+                <h4 id="start">S<br>T<br>A<br>R<br>T<br><i class="fas fa-play fa-rotate-90 fa-sm"></i></h4>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- questions display -->
+
+    <div class="container">
+        <div id="questionDisplay">
+
+            <!-- first row -->
+            <div class="row" style="margin-bottom: 40px">
+
+                <div class="col-sm-4 col-xs-12">
+                    <h4 id="question">WHAT IS VIETNAM'S TRADITIONAL GARMENT?</h4>
+                </div>
+                <div class="col-sm-1 hidden-xs"></div>
+                <div class="col-sm-2 col-xs-6 text-center test2">
+                    <p class="multiChoice" style="padding: 10px 0; border: 1px solid #333"><span class="abcd">A</span><br>Ao Dai</p>
+                </div>
+                <div class="col-sm-1 hidden-xs"></div>
+                <div class="col-sm-2 col-xs-6 text-center test2">
+                    <p class="multiChoice" style="padding: 10px 0; border: 1px solid #333"><span class="abcd">B</span> <br>Cheongsam</p>
+                </div>
+                <div class="col-sm-2 hidden-xs"></div>
+
+            </div>
+
+            <!-- second row process bar -->
+            <div class="row">
+                <div id="timeSection">
+                    <div class="col-xs-10 col-sm-10">
+                        <div id="progressbar" style="background-color: #FF8C22; height: 15px; margin-top: 40px"></div>
+                    </div>
+                    <div class="col-sm-1 hidden-xs"></div>
+                    <div class="col-xs-2 col-sm-1 text-center">
+                        <h4>01</h4>
+                        <hr style="border-top: 2px solid #FF8C22; width:20px">
+                        <h4>10</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- third row -->
+            <div class="row" style="margin-top: 50px">
+                <div class="col-sm-4 col-xs-12 text-center">
+                    <h1 class="countDown">15</h1>
+                </div>
+                <div class="col-sm-1 hidden-xs"></div>
+                <div class="col-sm-2 col-xs-6 text-center">
+                    <p class="multiChoice test" style="padding: 10px 0; border: 1px solid #333"><span class="abcd">C</span> <br>Kimono</p>
+                </div>
+                <div class="col-sm-1 hidden-xs"></div>
+                <div class="col-sm-2 col-xs-6 text-center">
+                    <p class="multiChoice test" style="padding: 10px 0; border: 1px solid #333"><span class="abcd">D</span> <br>Salong</p>
+                </div>
+                <div class="col-sm-2 hidden-xs">
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- answers display -->
+        <div id="answerDisplay">
+            <div class="row">
+
+                <div class="col-md-2">
+                    <h3 id="rightOrWrong">YOU ARE<br><span style="color: #FF8C22; font-weight:bold; letter-spacing: 5px;">WRONG</span></h3>
+                </div>
+
+                <div class="col-md-3">
+                    <p id="correctAns">The correct<br class="visible-md hidden-xs"> answer is<br class="hidden-xs"/> Nha Trang</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="assets/images/nhaTrang.jpg" alt="" class="img-responsive" id="imgage-holder">
+                </div>
+                
+                <!-- <div class="col-sm-1 hidden-xs"></div> -->
+
+                <div class="col-md-2 text-center questionNum">
+                    <h4>01</h4>
+                    <hr style="border-top: 2px solid #FF8C22; width:20px">
+                    <h4>10</h4>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="assets/js/app.js"></script>
 </body>
 
 </html>
