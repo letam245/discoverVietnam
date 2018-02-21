@@ -22,6 +22,14 @@ body {
     -o-background-size: cover;
     -webkit-transition-timing-function: background 1.5s linear;
     transition: background 1s linear;
+
+ 
+    -webkit-transition: -webkit-transform  background 1.5s linear;
+
+    -moz-transition: -moz-transform  background 1.5s linear;
+
+    transition: -webkit-transform  background 1.5s linear;
+    
 }
 
 .vnTxt {
@@ -82,7 +90,7 @@ h1#vn {
     font-family: 'Atmostphere', Arial, sans-serif;
     letter-spacing: 1.2em;
     font-size: 100px;
-    color: #FF8C22;
+    color: #FE7900;
     position: absolute;
     margin: 160px auto 0 -412px;
     top: 0;
@@ -91,12 +99,9 @@ h1#vn {
     left: 0px;
 }
 
-br.test {
-    display: none;
-}
 
 .fa-play {
-    color: #FF8C22;
+    color: #FE7900;
     /* color: #FEE098; */
     animation: pulse2 .4s infinite;
     cursor: pointer!important;
@@ -132,13 +137,13 @@ p.multiChoice::after {
 }
 
 h1.countDown {
-    color: #FF8C22;
+    color: #FE7900;
     font-weight: 600;
     margin-top: 15px;
 }
 
 .abcd {
-    color: #FF8C22;
+    color: #FE7900;
     font-weight: bold;
     padding-bottom: 5px;
 }
@@ -168,7 +173,68 @@ p#correctAns {
 }
 
 
-/*-------------MEDIA QUERIES-------------*/
+
+/* ===========result section ========== */
+
+#resultBox {
+    width: 230px;
+    height: 450px;
+    border: solid 1.5px #fff;
+    position: absolute;
+    margin: auto;
+    top: -80px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+
+
+h4#result {
+    font-size: 15px;
+    letter-spacing: 0.15em;
+    color: #fff;
+    text-align: justify;
+    text-transform: uppercase;
+    line-height: 2.2em;
+    margin: 25px auto 0px 20px;
+  
+}
+
+h4#again{
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 3em;
+    top: 97%;
+    left: 48.5%;
+    position: absolute;
+    -ms-transform: translate(-48%, -48%);
+    transform: translate(-48%, -48%);
+
+}
+
+h1#resultTxt {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Atmostphere', Arial, sans-serif;
+    letter-spacing: 1.25em;
+    font-size: 100px;
+    color: #FE7900;
+    position: absolute;
+    margin:200px auto 0 -430px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0px;
+}
+
+
+
+
+
+/*================================================ MEDIA QUERIES ================================================*/
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px) {
     
@@ -191,16 +257,27 @@ p#correctAns {
             line-height: 80px!important;
             margin: 150px auto 0 15px!important;
             text-align: center!important;
-            color:#FF8C22;
+            color:FE7900;
 
         }
 
+
+        h1#resultTxt {
+            font-size: 45px!important;
+            letter-spacing: 0.3em!important;
+            line-height: 70px!important;
+            margin: 180px auto 0 10px!important;
+            text-align: center!important;
+            color:#FE7900;
+        }
+
         .fa-play {
-            color: #FF8C22;
+            color: #FF7000;
            
         }
 
 
+        /* ================== question section ============== */
         #questionDisplay {
             width: auto;
             position: relative!important;
@@ -245,6 +322,13 @@ p#correctAns {
 
         }
 
+        h1#resultTxt {
+            font-size: 50px!important;
+            margin: 185px auto 0 15px!important;
+            letter-spacing: 0.3em;
+            line-height: 1.3em;
+        }
+
         /* ================== answer section ============== */
           h3#rightOrWrong, p#correctAns, .questionNum {
             margin-top:-40px;
@@ -258,12 +342,20 @@ p#correctAns {
             
         }
 
-        #imgage-holder {
-            margin-top:30px;
+        #image-holder {
+            margin-top:35px!important;
         }
         
 
     
+    }
+
+    @media only screen and (max-width: 1024px){
+        h1#resultTxt {
+            font-size: 90px;
+            margin: 200px auto 0 -370px;
+            
+        }
     }
     
     
