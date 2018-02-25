@@ -86,7 +86,7 @@ $(document).ready(function () {
         //question 7
         {
             question: "Which beverage is most popular in Vietnam?",
-            answers: ['Cononut Juice', 'Green Tea', 'Coffee', 'Sugarcane'],
+            answers: ['Cononut', 'Green Tea', 'Coffee', 'Sugarcane'],
             correctAnswer: 2,
             pic: 'assets/images/caphe.gif',
         },
