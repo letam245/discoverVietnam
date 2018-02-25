@@ -20,15 +20,8 @@ body {
     -webkit-background-size: cover;
 	-moz-background-size: cover;
     -o-background-size: cover;
-    -webkit-transition-timing-function: background 1.5s linear;
-    transition: background 1s linear;
-
- 
-    -webkit-transition: -webkit-transform  background 1.5s linear;
-
-    -moz-transition: -moz-transform  background 1.5s linear;
-
-    transition: -webkit-transform  background 1.5s linear;
+    -webkit-transition-timing-function: 1.5s linear;
+    transition: 1s linear;
     
 }
 
@@ -131,28 +124,83 @@ h1#vn {
 
 };
 
+
 p.multiChoice::after {
-    padding: 10px 0;
-    border: solid 1px #333!important; 
+    border: solid 1px #333;
 }
 
+
 h1.countDown {
-    color: #FE7900;
+    color: #FE7900!important; 
     font-weight: 600;
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
 .abcd {
     color: #FE7900;
     font-weight: bold;
-    padding-bottom: 5px;
+    font-size:18px;
+    
 }
 
+/* .multiChoice:hover{
+    animation-name: rotate; 
+    animation-duration: 3s; 
+    animation-timing-function: linear;
+  }
+  @keyframes rotate {
+      from {transform: rotateY(0deg);}
+      to {transform: rotateY(360deg);}
+  } */
+
+  .multiChoice {
+    margin : 0 auto;
+    width : auto;
+    height : 60px;
+    overflow : hidden;
+    text-align : center;
+    transition : .2s;
+    cursor : pointer;
+  }
+
+  .multiChoice > p {
+    margin: 0px;
+    text-transform: capitalize;
+    transition : .3s;
+}
+
+.multiChoice:hover > p{
+    margin-left : 35px;
+  }
+
+  .hoverEffect {
+    position : relative;
+    border : 1px solid #333;
+    width : 200px;
+    height : 200px;
+    margin-top: -100px;
+    background : #FE7900;
+    left : -250px;
+    transition : .3s;
+    transform : rotate(20deg);
+    opacity: 0.9;
+  }
+  .multiChoice:hover .hoverEffect{
+    left: -165px;
+  }
+
+  .sure {
+    margin-top : 42px;
+    margin-right : -140px;
+    color : #fff;
+    transform : rotate(-20deg);
+    font-size:12px;
+  }
 
 /* ================== answer section ============== */
 
 
-h3#rightOrWrong {
+h3.checkAns{
     line-height: 1.5em;
     letter-spacing: 0.1em;
     font-weight: 400;
@@ -161,7 +209,12 @@ h3#rightOrWrong {
    
 }
 
-p#correctAns {
+.boldTxt {
+    color: #FE7900; 
+    font-weight:bold; 
+    letter-spacing: 6px;
+}
+#correctAns > p {
     letter-spacing: 0.7em;
     line-height: 3em;
     padding-left:30px;
@@ -190,7 +243,7 @@ p#correctAns {
 }
 
 
-h4#result {
+h4.result {
     font-size: 15px;
     letter-spacing: 0.15em;
     color: #fff;
@@ -281,32 +334,34 @@ h1#resultTxt {
         #questionDisplay {
             width: auto;
             position: relative!important;
-            padding: 100px 10px!important;
-            margin: auto 20px auto 0px!important;
+            padding: 210px 10px!important;
+            margin: auto!important;
         }
 
 
         #timeSection{
-            margin-top: -320px!important;
+            margin-top: -370px!important;
             
         }
 
-        h4#question {
-            margin-bottom: 200px!important;
-        }
+        /* h4#questionAsks {
+            margin-top: 60px!important;
+        } */
 
         .countDown {
-            margin-top: -260px!important;
+            margin-top: -330px!important;
             margin-left:-30px!important;
         }
 
-        p.test{
-            margin-top:-35px;
+        .top {
+            margin-top:50px;
         }
 
-        div.test2{
-            margin-top:40px!important;
+        .bottom {
+            margin-top: -30px;
         }
+
+
         
     
     
@@ -330,7 +385,7 @@ h1#resultTxt {
         }
 
         /* ================== answer section ============== */
-          h3#rightOrWrong, p#correctAns, .questionNum {
+          h3.checkAns, #correctAns > p, .questionNum {
             margin-top:-40px;
             padding-left:0px!important;
             text-align: center!important;
@@ -344,11 +399,23 @@ h1#resultTxt {
 
         #image-holder {
             margin-top:35px!important;
+          
+            
+        }
+
+        .img-responsive {
+            display: inline-block!important;
+            
         }
         
 
     
     }
+
+
+  
+
+
 
     @media only screen and (max-width: 1024px){
         h1#resultTxt {
@@ -361,21 +428,39 @@ h1#resultTxt {
     
     /* Custome screen */ 
     @media only screen and (max-width: 1074px) {
-        p#correctAns {
+        #correctAns > p  {
             letter-spacing: 0.5em;
         }
-        h3#rightOrWrong{
+        h3.checkAns{
             font-size:20px;
         }
+    }
+
+
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        /* HOVER SURE? EFFECT CUSTOMIZE SCREEN */
+        .multiChoice {
+            width: 150px;
+        }
+
+        .top, .bottom {
+            margin-left:-60px;
+        }
+
+        .multiChoice:hover > p{
+            margin-left : 20px;
+        }
+
+
     }
     
     /* Large Devices, Wide Screens */
     @media only screen and (max-width: 1200px) {
-        p#correctAns {
+        #correctAns >p {
             padding-top: 50px!important;
         }
 
-        h3#rightOrWrong {
+        h3.checkAns {
             letter-spacing: 2.1px!important;
             padding-top: 60px!important;
         }
