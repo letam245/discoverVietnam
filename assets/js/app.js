@@ -351,7 +351,7 @@ $(document).ready(function () {
         //generate the result pannel
         $('#resultBox').html("<h4 class='result'>Correct Answer:" + correct +"</h4>"
                            + "<h4 class='result'>Wrong Answer:&nbsp;&nbsp;" + wrong +"</h4>"
-                           + "<h4 class='result'>No Answer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + unanswered +"</h4>"
+                           + "<h4 class='result'>No Answer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + unanswered +"</h4>"
                            + "<h1 id='resultTxt'>Re<br class='visible-xs visible-sm hidden-md'>sults</h1>"
                            + "<h4 id='again'>A<br>G<br>A<br>I<br>N<br><i class='fas fa-play fa-rotate-90 fa-sm'></i></h4>")
          
