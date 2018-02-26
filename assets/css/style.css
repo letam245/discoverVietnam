@@ -226,9 +226,13 @@ h1.countDown {
       width: 100%;
       background: #FE7900;
     }
+    50% {
+        width: 50%;
+        background: #FE7900;
+      }
     100% {
       width: 0%;
-      background: #FF0019;
+      background: #333;
     }
   }
   
