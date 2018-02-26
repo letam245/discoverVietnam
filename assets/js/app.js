@@ -1,32 +1,3 @@
-//   $(document).ready(function () {
-//         $('#questionDisplay').hide();
-//         $('#answerDisplay').hide();
-//         $('#resultBox').hide();
-
-//         $('#start').on('click', function () {
-//         $('#box').hide();
-//         $('body').css('background-image', 'url("assets/images/answerBg.jpg")');
-//         $("body").css({"background-position":"center center"})
-//         $('#questionDisplay').delay(1200).animate({height: 'toggle', opacity: '1'}, 1000);
-
-//         $('.multiChoice').on('click', function () {
-//             $('#questionDisplay').hide();
-//             $('#answerDisplay').animate({height: 'toggle', opacity: '1'}, 1000);
-//         });
-
-//         $('#image-holder').on('click', function () {
-//             $('#questionDisplay').hide();
-//             $('#answerDisplay').hide();
-//             $('body').css('background-image', 'url("assets/images/halong1.jpg")');
-//             // $("body").css({"background-position":"right center"});
-//             $('#resultBox').animate({width: 'toggle'}, 1000);
-
-//         });
-
-//     });
-
-// });
-
 $(document).ready(function () {
     // ==============================
     // THE QUESTIONS-ANSWERS OBJECTS
@@ -270,8 +241,11 @@ $(document).ready(function () {
         
 
 		//show the correct answer in the displayAnswer div
-		$('#image-holder').html('<img class="img-responsive" src =' + allQuestions[currentQuestion].pic + '>');
-        $('span.boldTxt').html("RIGHT").css("letter-spacing", "10px");
+        $('#image-holder').html('<img class="img-responsive" src =' + allQuestions[currentQuestion].pic + '>');
+        $('#rightOrWrong').html('<h3 class="checkAns">YOU ARE<br>'
+                              + '<span class="boldTxt">RIGHT</span></h3>');
+
+                // $('span.boldTxt').html("RIGHT").css("letter-spacing", "10px");
         $("#correctAns").html('<p>The correct <br class = "visible-md hidden-xs">answer is <br class="hidden-xs">'
                              + '<span style="text-transform: uppercase; color: #FE7900"; font-weight:600>' 
                              + allQuestions[currentQuestion].answers[allQuestions[currentQuestion].correctAnswer] 
@@ -294,8 +268,11 @@ $(document).ready(function () {
         
 
 		//show the correct answer in the displayAnswer div
-		$('#image-holder').html('<img class="img-responsive" src =' + allQuestions[currentQuestion].pic + '>');
-        $('span.boldTxt').html("WRONG");        
+        $('#image-holder').html('<img class="img-responsive" src =' + allQuestions[currentQuestion].pic + '>');
+        $('#rightOrWrong').html('<h3 class="checkAns">YOU ARE<br>'
+                              + '<span class="boldTxt"><span style="letter-spacing: 4px">WRONG</span></h3>');
+        
+        // $('span.boldTxt').html("WRONG");        
         $("#correctAns").html('<p>The correct <br class = "visible-md hidden-xs">answer is <br class="hidden-xs">'
                             + '<span style="text-transform: uppercase; color: #FE7900"; font-weight:600>' 
                             + allQuestions[currentQuestion].answers[allQuestions[currentQuestion].correctAnswer] 
@@ -321,7 +298,9 @@ $(document).ready(function () {
 		//increase the correctAnswer
 		unanswered++;
         //show the correct answer in the displayAnswer div
-        $('.checkAns').html("<span class='boldTxt'>TIME'S UP</span>")
+        $('#rightOrWrong').html("<h3 class='checkAns boldTxt'>TIME'S<br>UP</h3>");
+
+        // $('.checkAns').html("<span class='boldTxt'>TIME'S UP</span>")
 		$('#image-holder').html('<img class="img-responsive" src =' + allQuestions[currentQuestion].pic + '>');        
         $("#correctAns").html('<p>The correct <br class = "visible-md hidden-xs">answer is <br class="hidden-xs">'
                             + '<span style="text-transform: uppercase; color: #FE7900"; font-weight:600>' 
@@ -349,9 +328,9 @@ $(document).ready(function () {
         $('#resultBox').animate({width: 'toggle'}, 1000);
 
         //generate the result pannel
-        $('#resultBox').html("<h4 class='result'>Correct Answer:" + correct +"</h4>"
-                           + "<h4 class='result'>Wrong Answer:&nbsp;&nbsp;" + wrong +"</h4>"
-                           + "<h4 class='result'>No Answer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + unanswered +"</h4>"
+        $('#resultBox').html("<h4 class='result'>Correct Answer: &nbsp;" + correct +"</h4>"
+                           + "<h4 class='result'>Wrong Answer:&nbsp;&nbsp;&nbsp;&nbsp;" + wrong +"</h4>"
+                           + "<h4 class='result'>No Answer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + unanswered +"</h4>"
                            + "<h1 id='resultTxt'>Re<br class='visible-xs visible-sm hidden-md'>sults</h1>"
                            + "<h4 id='again'>A<br>G<br>A<br>I<br>N<br><i class='fas fa-play fa-rotate-90 fa-sm'></i></h4>")
          
@@ -373,3 +352,20 @@ $(document).ready(function () {
     }
 
 });
+
+
+
+// ==============================
+//          Pseudo Code
+// ==============================
+
+// We need to keep track of correct, incorrect and unanswered questions
+//2.set timeRemain counting down from 20 second (using setTimeout???)
+//3. Create function to display each question in the DOM 
+//4. create function to display 4 different optional answers
+//5. create function to check if the user's answer is right
+//6. if the answer is correct ==> display CORRECT! and matching 'right' image with the question then move to the next question after 5secons
+//7. if the answer is wrong ===> display WRONG! correct answer is :....... and matching 'wrong' image with question then move to the next question after 5secons 
+//8. if the user doesnt answer the question within 30 seconds ===> display"Time is up" and 'correct answer is' and matching 'right' image then move to the next question after 5seconds
+//9. create a function to display the result when user answer all the questions
+//The result should keep track of number of correct and wrong answer (correct++ and wrong++) and a button to restart the game
