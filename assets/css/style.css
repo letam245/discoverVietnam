@@ -93,13 +93,17 @@ h1#vn {
 }
 
 
+svg.svg-inline--fa:hover {
+    color: #fff;
+}
+
+
 .fa-play {
     color: #FE7900;
     /* color: #FEE098; */
     animation: pulse2 .4s infinite;
     cursor: pointer!important;
 }
-
 
 
 @keyframes pulse2 {
@@ -197,6 +201,39 @@ h1.countDown {
     font-size:12px;
   }
 
+  /* =================== PROCESS BAR ANIMATION ================ */
+
+  #progressBar {
+    width: 100%;
+    margin-top:40px;
+    height: 15px;
+    background-color: transparent;
+    /* border: solid 1px #FE7900; */
+  }
+
+  .progressbar .inner {
+    height: 15px;
+    /* border: solid 1px #FE7900; */
+    animation: progressbar-countdown;
+    animation-duration: 11s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    animation-timing-function: linear;
+  }
+  @keyframes progressbar-countdown {
+    0% {
+      width: 100%;
+      background: #FE7900;
+    }
+    100% {
+      width: 0%;
+      background: #FF0019;
+    }
+  }
+  
+
+
 /* ================== answer section ============== */
 
 
@@ -289,9 +326,9 @@ h1#resultTxt {
     left: 0px;
 }
 
-svg.svg-inline--fa:hover {
-    color: #fff;
-}
+
+
+
 
 
 

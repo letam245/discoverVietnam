@@ -134,9 +134,10 @@ $(document).ready(function () {
 
     //function to start the countdown timer
 	function startTimer(){
-		$('.countDown').show();
+        $('.countDown').show();
+        $('.countDown').html('&nbsp;');
 
-		var timeRemain = 5;
+		var timeRemain = 11;
 
 		function run(){
 			intervalId = setInterval(decrement, 1000);
@@ -158,6 +159,38 @@ $(document).ready(function () {
     run();
     }
 
+
+    //function to animate process bar
+    function createProgressbar(id, duration, callback) {
+        // We select the div that we want to turn into a progressbar
+        var progressbar = document.getElementById(id);
+        progressbar.className = 'progressbar';
+      
+        // We create the div that changes width to show progress
+        var progressbarinner = document.createElement('div');
+        progressbarinner.className = 'inner';
+      
+        // Now we set the animation parameters
+        progressbarinner.style.animationDuration = duration;
+      
+        // Eventually couple a callback
+        if (typeof(callback) === 'function') {
+          progressbarinner.addEventListener('animationend', callback);
+        }
+      
+        // Append the progressbar to the main progressbardiv
+        progressbar.appendChild(progressbarinner);
+      
+        // When everything is set up we start the animation
+        progressbarinner.style.animationPlayState = 'running';
+      }
+      
+      addEventListener('load', function() {
+        createProgressbar('progressBar', '11s');
+    });
+
+
+     
     //function to display the questions
 	function displayQuestion() {
         console.log('display the 4 questions');
